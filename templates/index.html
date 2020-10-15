@@ -1,16 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>ML_Speed_Dating</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>DATA + LOVE</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Stlye CSS  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+
     <!-- Latest compiled and minified plotly.js JavaScript -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
     <!-- OR use a specific plotly.js release (e.g. version 1.52.3) -->
@@ -21,56 +25,817 @@
 </head>
 
 <body>
-    <h1>PROJECT_3</h1>
 
-    <div class='tableauPlaceholder' id='viz1602636417529' style='position: relative'>
-        <noscript><a href='#'><img alt=' '
-                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sp&#47;speed_dating&#47;FieldofStudy&#47;1_rss.png'
-                    style='border: none' /></a></noscript>
-        <object class='tableauViz' style='display:none;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-            <param name='embed_code_version' value='3' />
-            <param name='site_root' value='' />
-            <param name='name' value='speed_dating&#47;FieldofStudy' />
-            <param name='tabs' value='no' />
-            <param name='toolbar' value='yes' />
-            <param name='static_image'
-                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sp&#47;speed_dating&#47;FieldofStudy&#47;1.png' />
-            <param name='animate_transition' value='yes' />
-            <param name='display_static_image' value='yes' />
-            <param name='display_spinner' value='yes' />
-            <param name='display_overlay' value='yes' />
-            <param name='display_count' value='yes' />
-            <param name='language' value='en' />
-            <param name='filter' value='publish=yes' /></object></div>
-    <script type='text/javascript'>                    var divElement = document.getElementById('viz1602636417529');
-        var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-        var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-    </script>
+    <a name="top"></a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
 
-    <!-- Importance of Attribute As Rated By Partner -->
-    <div>
-        <div id="c3db801e-9116-465c-a305-d4e4a99a88a4" class="plotly-graph-div" style="height:100%; width:100%;"></div>
-        <script type="text/javascript">window.PLOTLYENV = window.PLOTLYENV || {}; if (document.getElementById("c3db801e-9116-465c-a305-d4e4a99a88a4")) { Plotly.newPlot("c3db801e-9116-465c-a305-d4e4a99a88a4", [{ "hovertext": "The Impotance as Rated by Women", "name": "Men", "type": "bar", "x": ["Ambition", "Fun", "Intelligence", "Attractiveness", "Shared Interests/Hobbies", "Sincerity"], "y": [1.762, 3.3339, 1.6902, 2.9383, 3.0970999999999997, 1.9036999999999997] }, { "hovertext": "The Impotance as Rated by Men", "name": "Women", "type": "bar", "x": ["Ambition", "Fun", "Intelligence", "Attractiveness", "Shared Interests/Hobbies", "Sincerity"], "y": [2.0275000000000003, 2.6977, 1.9257, 3.1537999999999995, 3.0522, 1.9088] }], { "barmode": "group", "template": { "data": { "bar": [{ "error_x": { "color": "#2a3f5f" }, "error_y": { "color": "#2a3f5f" }, "marker": { "line": { "color": "#E5ECF6", "width": 0.5 } }, "type": "bar" }], "barpolar": [{ "marker": { "line": { "color": "#E5ECF6", "width": 0.5 } }, "type": "barpolar" }], "carpet": [{ "aaxis": { "endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f" }, "baxis": { "endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f" }, "type": "carpet" }], "choropleth": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "type": "choropleth" }], "contour": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour" }], "contourcarpet": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "type": "contourcarpet" }], "heatmap": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap" }], "heatmapgl": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl" }], "histogram": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "histogram" }], "histogram2d": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d" }], "histogram2dcontour": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour" }], "mesh3d": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "type": "mesh3d" }], "parcoords": [{ "line": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "parcoords" }], "pie": [{ "automargin": true, "type": "pie" }], "scatter": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatter" }], "scatter3d": [{ "line": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatter3d" }], "scattercarpet": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattercarpet" }], "scattergeo": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattergeo" }], "scattergl": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattergl" }], "scattermapbox": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattermapbox" }], "scatterpolar": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatterpolar" }], "scatterpolargl": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatterpolargl" }], "scatterternary": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatterternary" }], "surface": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface" }], "table": [{ "cells": { "fill": { "color": "#EBF0F8" }, "line": { "color": "white" } }, "header": { "fill": { "color": "#C8D4E3" }, "line": { "color": "white" } }, "type": "table" }] }, "layout": { "annotationdefaults": { "arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1 }, "coloraxis": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "colorscale": { "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]] }, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": { "color": "#2a3f5f" }, "geo": { "bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white" }, "hoverlabel": { "align": "left" }, "hovermode": "closest", "mapbox": { "style": "light" }, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": { "angularaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "bgcolor": "#E5ECF6", "radialaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" } }, "scene": { "xaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white" }, "yaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white" }, "zaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white" } }, "shapedefaults": { "line": { "color": "#2a3f5f" } }, "ternary": { "aaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "baxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "bgcolor": "#E5ECF6", "caxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" } }, "title": { "x": 0.05 }, "xaxis": { "automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": { "standoff": 15 }, "zerolinecolor": "white", "zerolinewidth": 2 }, "yaxis": { "automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": { "standoff": 15 }, "zerolinecolor": "white", "zerolinewidth": 2 } } }, "title": { "text": "Importance of Attribute As Rated By Your Partner" } }, { "responsive": true }) };
+            <!-- Logo -->
+            <a class="navbar-brand" href="#"><img src="../static/images/logo.png" alt="heart logo" width="25px"> <b>D A
+                    T A + </b>L O V E</a>
+
+
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink"
+                        role="button" aria-haspopup="true" aria-expanded="false">Visuals</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#visual1">1</a>
+                        <a class="dropdown-item" href="#visual2">2</a>
+                        <a class="dropdown-item" href="#visual3">3</a>
+                        <a class="dropdown-item" href="#visual4">4</a>
+                        <a class="dropdown-item" href="#visual5">5</a>
+                        <a class="dropdown-item" href="#visual6">6</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row align-items-center my-5">
+            <div class="col-lg-7">
+                <img class="img-fluid rounded mb-4 mb-lg-0" src="../static/images/banner.png" width="900px"
+                    height="400px" alt="banner picture">
+            </div>
+            <!-- /.col-lg-8 -->
+            <div class="col-lg-5">
+                <h1 class="font-weight-light"><b>D A T A + </b>L O V E</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus
+                    quam molestias corporis quod, ea minima accusamus.</p>
+                <a class="btn btn-danger" href="https://github.com/kisha5000/Team12Project3" target="_blank">Github</a>
+                <a class="btn btn-danger" href="http://www.stat.columbia.edu/~gelman/arm/examples/speed.dating/"
+                    target="_blank">Original Data</a>
+                <a class="btn btn-danger" href="about.html">About</a>
+
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Text Divider -->
+        <!-- <div class="card text-white bg-secondary my-5 py-4 text-center">
+            <div class="card-body">
+                <p class="text-white m-0">This call to action card is a great place to showcase some important
+                    information or display a clever tagline!</p>
+            </div>
+        </div> -->
+
+        <!-- Content Row 1 -->
+        <div class="row">
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Visual One</h2>
+                        <p><img src="../static/images/img1.png" width="300px"></p>
+                        <p class="card-text">Field of Study by Gender</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#visual1" class="btn btn-danger btn-sm">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Visual Two</h2>
+                        <p><img src="../static/images/img2.png" width="300px"></p>
+                        <p class="card-text">Importance of Attribute As Rated By Your Partner</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#visual2" class="btn btn-danger btn-sm">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Visual Three</h2>
+                        <p><img src="../static/images/img3.png" width="300px"></p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+                            numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#visual3" class="btn btn-danger btn-sm">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row 2 -->
+        <div class="row">
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Visual Four</h2>
+                        <p><img src="../static/images/img4.png" width="300px"></p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+                            numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#visual4" class="btn btn-danger btn-sm">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Visual Five</h2>
+                        <p><img src="../static/images/img5.png" width="300px"></p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex
+                            natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore
+                            voluptates quos eligendi labore.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#visual5" class="btn btn-danger btn-sm">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Visual Six</h2>
+                        <p><img src="../static/images/img6.png" width="300px"></p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+                            numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#visual6" class="btn btn-danger btn-sm">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+
+        </div>
+        <!-- /.row -->
+
+
+        <!-- VISUAL 1 -->
+        <a name="visual1"></a>
+        <div class="card text-white bg-secondary my-5 py-4 text-center">
+            <div class="card-body">
+                <h2 class="card-title">Field of Study by Gender</h2>
+            </div>
+        </div>
+
+        <div class='tableauPlaceholder' id='viz1602636417529' style='position: relative'>
+            <noscript><a href='#'><img alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sp&#47;speed_dating&#47;FieldofStudy&#47;1_rss.png'
+                        style='border: none' /></a></noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='speed_dating&#47;FieldofStudy' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;sp&#47;speed_dating&#47;FieldofStudy&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en' />
+                <param name='filter' value='publish=yes' /></object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1602636417529');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
         </script>
+
+        <br><br>
+        <div>
+            <a class="btn btn-danger" href="#top">Back To Top</a>
+
+        </div>
+
+
+
+
+
+
+        <!-- VISUAL 2 -->
+        <a name="visual2"></a>
+        <div class="card text-white bg-secondary my-5 py-4 text-center">
+            <div class="card-body">
+                <h2 class="card-title">Importance of Attribute As Rated By Your Partner</h2>
+            </div>
+        </div>
+
+        <div>
+            <div id="c3db801e-9116-465c-a305-d4e4a99a88a4" class="plotly-graph-div" style="height:100%; width:100%;">
+            </div>
+            <script type="text/javascript">
+                window.PLOTLYENV = window.PLOTLYENV || {};
+                if (document.getElementById("c3db801e-9116-465c-a305-d4e4a99a88a4")) {
+                    Plotly.newPlot("c3db801e-9116-465c-a305-d4e4a99a88a4", [{
+                        "hovertext": "The Impotance as Rated by Women",
+                        "name": "Men",
+                        "type": "bar",
+                        "x": ["Ambition", "Fun", "Intelligence", "Attractiveness",
+                            "Shared Interests/Hobbies", "Sincerity"
+                        ],
+                        "y": [1.762, 3.3339, 1.6902, 2.9383, 3.0970999999999997, 1.9036999999999997]
+                    }, {
+                        "hovertext": "The Impotance as Rated by Men",
+                        "name": "Women",
+                        "type": "bar",
+                        "x": ["Ambition", "Fun", "Intelligence", "Attractiveness",
+                            "Shared Interests/Hobbies", "Sincerity"
+                        ],
+                        "y": [2.0275000000000003, 2.6977, 1.9257, 3.1537999999999995, 3.0522, 1.9088]
+                    }], {
+                        "barmode": "group",
+                        "template": {
+                            "data": {
+                                "bar": [{
+                                    "error_x": {
+                                        "color": "#2a3f5f"
+                                    },
+                                    "error_y": {
+                                        "color": "#2a3f5f"
+                                    },
+                                    "marker": {
+                                        "line": {
+                                            "color": "#E5ECF6",
+                                            "width": 0.5
+                                        }
+                                    },
+                                    "type": "bar"
+                                }],
+                                "barpolar": [{
+                                    "marker": {
+                                        "line": {
+                                            "color": "#E5ECF6",
+                                            "width": 0.5
+                                        }
+                                    },
+                                    "type": "barpolar"
+                                }],
+                                "carpet": [{
+                                    "aaxis": {
+                                        "endlinecolor": "#2a3f5f",
+                                        "gridcolor": "white",
+                                        "linecolor": "white",
+                                        "minorgridcolor": "white",
+                                        "startlinecolor": "#2a3f5f"
+                                    },
+                                    "baxis": {
+                                        "endlinecolor": "#2a3f5f",
+                                        "gridcolor": "white",
+                                        "linecolor": "white",
+                                        "minorgridcolor": "white",
+                                        "startlinecolor": "#2a3f5f"
+                                    },
+                                    "type": "carpet"
+                                }],
+                                "choropleth": [{
+                                    "colorbar": {
+                                        "outlinewidth": 0,
+                                        "ticks": ""
+                                    },
+                                    "type": "choropleth"
+                                }],
+                                "contour": [{
+                                    "colorbar": {
+                                        "outlinewidth": 0,
+                                        "ticks": ""
+                                    },
+                                    "colorscale": [
+                                        [0.0, "#0d0887"],
+                                        [0.1111111111111111, "#46039f"],
+                                        [0.2222222222222222, "#7201a8"],
+                                        [0.3333333333333333, "#9c179e"],
+                                        [0.4444444444444444, "#bd3786"],
+                                        [0.5555555555555556, "#d8576b"],
+                                        [0.6666666666666666, "#ed7953"],
+                                        [0.7777777777777778, "#fb9f3a"],
+                                        [0.8888888888888888, "#fdca26"],
+                                        [1.0, "#f0f921"]
+                                    ],
+                                    "type": "contour"
+                                }],
+                                "contourcarpet": [{
+                                    "colorbar": {
+                                        "outlinewidth": 0,
+                                        "ticks": ""
+                                    },
+                                    "type": "contourcarpet"
+                                }],
+                                "heatmap": [{
+                                    "colorbar": {
+                                        "outlinewidth": 0,
+                                        "ticks": ""
+                                    },
+                                    "colorscale": [
+                                        [0.0, "#0d0887"],
+                                        [0.1111111111111111, "#46039f"],
+                                        [0.2222222222222222, "#7201a8"],
+                                        [0.3333333333333333, "#9c179e"],
+                                        [0.4444444444444444, "#bd3786"],
+                                        [0.5555555555555556, "#d8576b"],
+                                        [0.6666666666666666, "#ed7953"],
+                                        [0.7777777777777778, "#fb9f3a"],
+                                        [0.8888888888888888, "#fdca26"],
+                                        [1.0, "#f0f921"]
+                                    ],
+                                    "type": "heatmap"
+                                }],
+                                "heatmapgl": [{
+                                    "colorbar": {
+                                        "outlinewidth": 0,
+                                        "ticks": ""
+                                    },
+                                    "colorscale": [
+                                        [0.0, "#0d0887"],
+                                        [0.1111111111111111, "#46039f"],
+                                        [0.2222222222222222, "#7201a8"],
+                                        [0.3333333333333333, "#9c179e"],
+                                        [0.4444444444444444, "#bd3786"],
+                                        [0.5555555555555556, "#d8576b"],
+                                        [0.6666666666666666, "#ed7953"],
+                                        [0.7777777777777778, "#fb9f3a"],
+                                        [0.8888888888888888, "#fdca26"],
+                                        [1.0, "#f0f921"]
+                                    ],
+                                    "type": "heatmapgl"
+                                }],
+                                "histogram": [{
+                                    "marker": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "histogram"
+                                }],
+                                "histogram2d": [{
+                                    "colorbar": {
+                                        "outlinewidth": 0,
+                                        "ticks": ""
+                                    },
+                                    "colorscale": [
+                                        [0.0, "#0d0887"],
+                                        [0.1111111111111111, "#46039f"],
+                                        [0.2222222222222222, "#7201a8"],
+                                        [0.3333333333333333, "#9c179e"],
+                                        [0.4444444444444444, "#bd3786"],
+                                        [0.5555555555555556, "#d8576b"],
+                                        [0.6666666666666666, "#ed7953"],
+                                        [0.7777777777777778, "#fb9f3a"],
+                                        [0.8888888888888888, "#fdca26"],
+                                        [1.0, "#f0f921"]
+                                    ],
+                                    "type": "histogram2d"
+                                }],
+                                "histogram2dcontour": [{
+                                    "colorbar": {
+                                        "outlinewidth": 0,
+                                        "ticks": ""
+                                    },
+                                    "colorscale": [
+                                        [0.0, "#0d0887"],
+                                        [0.1111111111111111, "#46039f"],
+                                        [0.2222222222222222, "#7201a8"],
+                                        [0.3333333333333333, "#9c179e"],
+                                        [0.4444444444444444, "#bd3786"],
+                                        [0.5555555555555556, "#d8576b"],
+                                        [0.6666666666666666, "#ed7953"],
+                                        [0.7777777777777778, "#fb9f3a"],
+                                        [0.8888888888888888, "#fdca26"],
+                                        [1.0, "#f0f921"]
+                                    ],
+                                    "type": "histogram2dcontour"
+                                }],
+                                "mesh3d": [{
+                                    "colorbar": {
+                                        "outlinewidth": 0,
+                                        "ticks": ""
+                                    },
+                                    "type": "mesh3d"
+                                }],
+                                "parcoords": [{
+                                    "line": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "parcoords"
+                                }],
+                                "pie": [{
+                                    "automargin": true,
+                                    "type": "pie"
+                                }],
+                                "scatter": [{
+                                    "marker": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "scatter"
+                                }],
+                                "scatter3d": [{
+                                    "line": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "marker": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "scatter3d"
+                                }],
+                                "scattercarpet": [{
+                                    "marker": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "scattercarpet"
+                                }],
+                                "scattergeo": [{
+                                    "marker": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "scattergeo"
+                                }],
+                                "scattergl": [{
+                                    "marker": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "scattergl"
+                                }],
+                                "scattermapbox": [{
+                                    "marker": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "scattermapbox"
+                                }],
+                                "scatterpolar": [{
+                                    "marker": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "scatterpolar"
+                                }],
+                                "scatterpolargl": [{
+                                    "marker": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "scatterpolargl"
+                                }],
+                                "scatterternary": [{
+                                    "marker": {
+                                        "colorbar": {
+                                            "outlinewidth": 0,
+                                            "ticks": ""
+                                        }
+                                    },
+                                    "type": "scatterternary"
+                                }],
+                                "surface": [{
+                                    "colorbar": {
+                                        "outlinewidth": 0,
+                                        "ticks": ""
+                                    },
+                                    "colorscale": [
+                                        [0.0, "#0d0887"],
+                                        [0.1111111111111111, "#46039f"],
+                                        [0.2222222222222222, "#7201a8"],
+                                        [0.3333333333333333, "#9c179e"],
+                                        [0.4444444444444444, "#bd3786"],
+                                        [0.5555555555555556, "#d8576b"],
+                                        [0.6666666666666666, "#ed7953"],
+                                        [0.7777777777777778, "#fb9f3a"],
+                                        [0.8888888888888888, "#fdca26"],
+                                        [1.0, "#f0f921"]
+                                    ],
+                                    "type": "surface"
+                                }],
+                                "table": [{
+                                    "cells": {
+                                        "fill": {
+                                            "color": "#EBF0F8"
+                                        },
+                                        "line": {
+                                            "color": "white"
+                                        }
+                                    },
+                                    "header": {
+                                        "fill": {
+                                            "color": "#C8D4E3"
+                                        },
+                                        "line": {
+                                            "color": "white"
+                                        }
+                                    },
+                                    "type": "table"
+                                }]
+                            },
+                            "layout": {
+                                "annotationdefaults": {
+                                    "arrowcolor": "#2a3f5f",
+                                    "arrowhead": 0,
+                                    "arrowwidth": 1
+                                },
+                                "coloraxis": {
+                                    "colorbar": {
+                                        "outlinewidth": 0,
+                                        "ticks": ""
+                                    }
+                                },
+                                "colorscale": {
+                                    "diverging": [
+                                        [0, "#8e0152"],
+                                        [0.1, "#c51b7d"],
+                                        [0.2, "#de77ae"],
+                                        [0.3, "#f1b6da"],
+                                        [0.4, "#fde0ef"],
+                                        [0.5, "#f7f7f7"],
+                                        [0.6, "#e6f5d0"],
+                                        [0.7, "#b8e186"],
+                                        [0.8, "#7fbc41"],
+                                        [0.9, "#4d9221"],
+                                        [1, "#276419"]
+                                    ],
+                                    "sequential": [
+                                        [0.0, "#0d0887"],
+                                        [0.1111111111111111, "#46039f"],
+                                        [0.2222222222222222, "#7201a8"],
+                                        [0.3333333333333333, "#9c179e"],
+                                        [0.4444444444444444, "#bd3786"],
+                                        [0.5555555555555556, "#d8576b"],
+                                        [0.6666666666666666, "#ed7953"],
+                                        [0.7777777777777778, "#fb9f3a"],
+                                        [0.8888888888888888, "#fdca26"],
+                                        [1.0, "#f0f921"]
+                                    ],
+                                    "sequentialminus": [
+                                        [0.0, "#0d0887"],
+                                        [0.1111111111111111, "#46039f"],
+                                        [0.2222222222222222, "#7201a8"],
+                                        [0.3333333333333333, "#9c179e"],
+                                        [0.4444444444444444, "#bd3786"],
+                                        [0.5555555555555556, "#d8576b"],
+                                        [0.6666666666666666, "#ed7953"],
+                                        [0.7777777777777778, "#fb9f3a"],
+                                        [0.8888888888888888, "#fdca26"],
+                                        [1.0, "#f0f921"]
+                                    ]
+                                },
+                                "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3",
+                                    "#FF6692", "#B6E880", "#FF97FF", "#FECB52"
+                                ],
+                                "font": {
+                                    "color": "#2a3f5f"
+                                },
+                                "geo": {
+                                    "bgcolor": "white",
+                                    "lakecolor": "white",
+                                    "landcolor": "#E5ECF6",
+                                    "showlakes": true,
+                                    "showland": true,
+                                    "subunitcolor": "white"
+                                },
+                                "hoverlabel": {
+                                    "align": "left"
+                                },
+                                "hovermode": "closest",
+                                "mapbox": {
+                                    "style": "light"
+                                },
+                                "paper_bgcolor": "white",
+                                "plot_bgcolor": "#E5ECF6",
+                                "polar": {
+                                    "angularaxis": {
+                                        "gridcolor": "white",
+                                        "linecolor": "white",
+                                        "ticks": ""
+                                    },
+                                    "bgcolor": "#E5ECF6",
+                                    "radialaxis": {
+                                        "gridcolor": "white",
+                                        "linecolor": "white",
+                                        "ticks": ""
+                                    }
+                                },
+                                "scene": {
+                                    "xaxis": {
+                                        "backgroundcolor": "#E5ECF6",
+                                        "gridcolor": "white",
+                                        "gridwidth": 2,
+                                        "linecolor": "white",
+                                        "showbackground": true,
+                                        "ticks": "",
+                                        "zerolinecolor": "white"
+                                    },
+                                    "yaxis": {
+                                        "backgroundcolor": "#E5ECF6",
+                                        "gridcolor": "white",
+                                        "gridwidth": 2,
+                                        "linecolor": "white",
+                                        "showbackground": true,
+                                        "ticks": "",
+                                        "zerolinecolor": "white"
+                                    },
+                                    "zaxis": {
+                                        "backgroundcolor": "#E5ECF6",
+                                        "gridcolor": "white",
+                                        "gridwidth": 2,
+                                        "linecolor": "white",
+                                        "showbackground": true,
+                                        "ticks": "",
+                                        "zerolinecolor": "white"
+                                    }
+                                },
+                                "shapedefaults": {
+                                    "line": {
+                                        "color": "#2a3f5f"
+                                    }
+                                },
+                                "ternary": {
+                                    "aaxis": {
+                                        "gridcolor": "white",
+                                        "linecolor": "white",
+                                        "ticks": ""
+                                    },
+                                    "baxis": {
+                                        "gridcolor": "white",
+                                        "linecolor": "white",
+                                        "ticks": ""
+                                    },
+                                    "bgcolor": "#E5ECF6",
+                                    "caxis": {
+                                        "gridcolor": "white",
+                                        "linecolor": "white",
+                                        "ticks": ""
+                                    }
+                                },
+                                "title": {
+                                    "x": 0.05
+                                },
+                                "xaxis": {
+                                    "automargin": true,
+                                    "gridcolor": "white",
+                                    "linecolor": "white",
+                                    "ticks": "",
+                                    "title": {
+                                        "standoff": 15
+                                    },
+                                    "zerolinecolor": "white",
+                                    "zerolinewidth": 2
+                                },
+                                "yaxis": {
+                                    "automargin": true,
+                                    "gridcolor": "white",
+                                    "linecolor": "white",
+                                    "ticks": "",
+                                    "title": {
+                                        "standoff": 15
+                                    },
+                                    "zerolinecolor": "white",
+                                    "zerolinewidth": 2
+                                }
+                            }
+                        },
+                        "title": {
+                            "text": "Importance of Attribute As Rated By Your Partner"
+                        }
+                    }, {
+                        "responsive": true
+                    })
+                };
+            </script>
+        </div>
+
+        <br><br>
+        <div>
+            <a class="btn btn-danger" href="#top">Back To Top</a>
+
+        </div>
+
+        <!-- VISUAL 3 -->
+        <a name="visual3"></a>
+        <div class="card text-white bg-secondary my-5 py-4 text-center">
+            <div class="card-body">
+                <h2 class="card-title">VISUAL 3</h2>
+            </div>
+        </div>
+
+
+
+
+        <!-- VISUAL 4 -->
+        <a name="visual4"></a>
+        <div class="card text-white bg-secondary my-5 py-4 text-center">
+            <div class="card-body">
+                <h2 class="card-title">VISUAL 4</h2>
+            </div>
+        </div>
+
+
+
+
+        <!-- VISUAL 5 -->
+        <a name="visual5"></a>
+        <div class="card text-white bg-secondary my-5 py-4 text-center">
+            <div class="card-body">
+                <h2 class="card-title">VISUAL 5</h2>
+            </div>
+        </div>
+
+
+
+
+        <!-- VISUAL 6 -->
+        <a name="visual6"></a>
+        <div class="card text-white bg-secondary my-5 py-4 text-center">
+            <div class="card-body">
+                <h2 class="card-title">VISUAL 6</h2>
+            </div>
+        </div>
+
+
     </div>
-    <!-- Importance of Attribute As Rated By Partner -->
+    <!-- /.container -->
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">2020 Rice Data Science Bootcamp | Team 12 | Project 3</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.1.1/d3.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="{{url_for('static', filename='js/logic.js')}}"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
 </body>
 
 </html>
