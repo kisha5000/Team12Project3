@@ -129,7 +129,7 @@
                 </div>
             </div>
             <!-- /.col-md-3 -->
-            
+
             <div class="col-md-3 mb-5">
                 <div class="card h-100">
                     <div class="card-body">
@@ -147,7 +147,7 @@
         </div>
         <!-- /.row -->
 
-        
+
 
 
         <!-- VISUAL 1 -->
@@ -160,21 +160,32 @@
 
         <!-- Tableau Code -->
         <div class='tableauPlaceholder' id='viz1602810752950' style='position: relative'>
-            <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;XF&#47;XF5YWSPQ4&#47;1_rss.png' style='border: none' /></a></noscript>
-            <object class='tableauViz'  style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                <param name='embed_code_version' value='3' /> 
-                <param name='path' value='shared&#47;XF5YWSPQ4' /> 
+            <noscript><a href='#'><img alt=' '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;XF&#47;XF5YWSPQ4&#47;1_rss.png'
+                        style='border: none' /></a></noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='path' value='shared&#47;XF5YWSPQ4' />
                 <param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;XF&#47;XF5YWSPQ4&#47;1.png' /> 
+                <param name='static_image'
+                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;XF&#47;XF5YWSPQ4&#47;1.png' />
                 <param name='animate_transition' value='yes' />
                 <param name='display_static_image' value='yes' />
                 <param name='display_spinner' value='yes' />
                 <param name='display_overlay' value='yes' />
                 <param name='display_count' value='yes' />
                 <param name='language' value='en' />
-                <param name='filter' value='publish=yes' /></object></div>                
-                <script type='text/javascript'>                    var divElement = document.getElementById('viz1602810752950');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='760px';vizElement.style.height='987px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                <param name='filter' value='publish=yes' /></object></div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1602810752950');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '760px';
+            vizElement.style.height = '987px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
         <!-- /Tableau Code -->
 
 
@@ -197,6 +208,7 @@
             </div>
         </div>
 
+        <!-- Plotly Code -->
         <div>
             <div id="c3db801e-9116-465c-a305-d4e4a99a88a4" class="plotly-graph-div" style="height:100%; width:100%;">
             </div>
@@ -204,7 +216,7 @@
                 window.PLOTLYENV = window.PLOTLYENV || {};
                 if (document.getElementById("c3db801e-9116-465c-a305-d4e4a99a88a4")) {
                     Plotly.newPlot("c3db801e-9116-465c-a305-d4e4a99a88a4", [{
-                        "hovertext": "The Impotance as Rated by Women",
+                        "hovertext": "Importance as Rated by Women",
                         "name": "Men",
                         "type": "bar",
                         "x": ["Ambition", "Fun", "Intelligence", "Attractiveness",
@@ -212,7 +224,7 @@
                         ],
                         "y": [1.762, 3.3339, 1.6902, 2.9383, 3.0970999999999997, 1.9036999999999997]
                     }, {
-                        "hovertext": "The Impotance as Rated by Men",
+                        "hovertext": "Importance as Rated by Men",
                         "name": "Women",
                         "type": "bar",
                         "x": ["Ambition", "Fun", "Intelligence", "Attractiveness",
@@ -703,6 +715,7 @@
                 };
             </script>
         </div>
+        <!-- /Plotly Code -->
 
         <br><br>
         <div>
@@ -718,11 +731,12 @@
             </div>
         </div>
 
-        <div id="myChart2">
-
-            <p>Insert V3 Here</p>
+        <!-- chart2.js -->
+        <div>
+            <canvas id="myChart2" width="50" height="15"></canvas>
 
         </div>
+        <!-- /chart2.js -->
 
 
         <br><br>
@@ -741,11 +755,12 @@
                 <h2 class="card-title">Attribute Importance</h2>
             </div>
         </div>
+        <!-- polar.js -->
+        <div>
+            <canvas id="myPolar" width="300" height="100"></canvas>
 
-        <div id="myPolar">
-
-            <p>Insert V4 Here</p>
         </div>
+        <!-- /polar.js -->
 
         <br><br>
         <div>
@@ -790,8 +805,10 @@
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
-    <script type="text/javascript" src="/static/js/chart2.js"></script>
-    <script type="text/javascript" src="/static/js/polar.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="{{url_for('static', filename='js/chart2.js')}}"></script>
+    <script src="{{url_for('static', filename='js/polar.js')}}"></script>
 
 </body>
 
