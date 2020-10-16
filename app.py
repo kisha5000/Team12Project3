@@ -24,6 +24,12 @@ def home():
     # Return template and data
     return render_template("index.html")
 
+
+# About
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/general_data")
 def general():
     # Return all of data from the mongo database
