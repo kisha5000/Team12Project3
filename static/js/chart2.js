@@ -12,42 +12,38 @@ function chartJS2() {
       item = window.getDistinct(item);
       itemFemale = window.getDistinct(itemFemale);
       item = getCertainFeatures(item, [
-        "fun_of_partner",
-        "partner_says_yes",
-        "shar_of_partner",
+        "income",
+        "age_subject",
+        "race_partner",
       ]);
       itemFemale = getCertainFeatures(itemFemale, [
-        "fun_of_partner",
-        "partner_says_yes",
-        "shar_of_partner",
+        "income",
+        "age_subject",
+        "race_partner",
       ]);
       //console.log(itemFemale);
       //console.log(item);
 
       item = item.sort(sortByPercent);
       itemFemale = itemFemale.sort(sortByPercent);
-      //BrianTut Code
-      const feature_list = ["fun_of_partner", "partner_says_yes", "shar_of_partner"]
+
+      const feature_list = ["income", "age_subject", "race_partner"];
       let importance = feature_list.map((feat) => {
-        const obj = item.filter(x => x.Feature == feat)[0];
+        const obj = item.filter((x) => x.Feature == feat)[0];
         return obj.Feature_Percentage;
       });
 
       let importance_fe = feature_list.map((feat) => {
-        const obj = itemFemale.filter(x => x.Feature == feat)[0];
+        const obj = itemFemale.filter((x) => x.Feature == feat)[0];
         return obj.Feature_Percentage;
       });
-//End of BrianTut Code
 
-      
-      //let importance = item.map((dating) => dating.Feature_Percentage);
       let feature_name = item.map((dating) => dating.Feature);
 
-      //let importance_fe = itemFemale.map((dating) => dating.Feature_Percentage);
       let feature_name_fe = itemFemale.map((dating) => dating.Feature);
 
       var chartData = {
-        labels: ["fun_of_partner", "partner_says_yes", "shar_of_partner"],
+        labels: ["Income", "Age", "Race"],
         datasets: [
           {
             label: "Male",
