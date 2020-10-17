@@ -26,7 +26,7 @@ function chartJS3() {
         labels: feature_name.slice(0, TOP_NUM),
         datasets: [
           {
-            label: "Attribute Importance",
+            label: "Attribute",
             backgroundColor: [
               "blue",
               "green",
@@ -48,8 +48,12 @@ function chartJS3() {
       },
 
       // Configuration options go here
-      options: {},
-    });
+      options: {
+        responsive: true,
+        legend: {
+          position: "right",
+        },
+      });
   });
 }
 chartJS3();

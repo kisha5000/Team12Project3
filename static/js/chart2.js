@@ -47,15 +47,15 @@ function chartJS2() {
         datasets: [
           {
             label: "Male",
-            backgroundColor: "blue",
-            borderColor: "yellow",
+            backgroundColor: "#4E79A7",
+            // borderColor: "yellow",
             borderWidth: 1,
             data: importance,
           },
           {
             label: "Female",
-            backgroundColor: "pink",
-            borderColor: "red",
+            backgroundColor: "#D37295", 
+            // borderColor: "red",
             borderWidth: 1,
             data: importance_fe,
           },
@@ -74,12 +74,12 @@ function chartJS2() {
         options: {
           responsive: true,
           legend: {
-            position: "top",
+            position: "right",
           },
-          title: {
-            display: true,
-            text: "Male vs. Female Attributes",
-          },
+          // title: {
+          //   display: true,
+          //   text: "Male vs. Female Attributes",
+          // },
         },
       });
     });
