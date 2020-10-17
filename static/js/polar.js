@@ -39,7 +39,7 @@ function chartJS3() {
               "pink",
               "gray",
             ],
-            borderColor: "rgb(259,99,132)",
+            // borderColor: "rgb(259,99,132)",
             data: importance.slice(0, TOP_NUM),
           },
         ],
