@@ -48,10 +48,10 @@
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink"
                         role="button" aria-haspopup="true" aria-expanded="false">Visuals</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#visual1">1</a>
-                        <a class="dropdown-item" href="#visual2">2</a>
-                        <a class="dropdown-item" href="#visual3">3</a>
-                        <a class="dropdown-item" href="#visual4">4</a>
+                        <a class="dropdown-item" href="#visual1">Background</a>
+                        <a class="dropdown-item" href="#visual2">Attributes</a>
+                        <a class="dropdown-item" href="#visual3">Demographics</a>
+                        <a class="dropdown-item" href="#visual4">Top Ten Attributes</a>
                     </div>
                 </li>
 
@@ -75,11 +75,11 @@
             <!-- /.col-lg-8 -->
             <div class="col-lg-5">
                 <h1 class="font-weight-light"><b>D A T A + </b>L O V E</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus
-                    quam molestias corporis quod, ea minima accusamus.</p>
+                <p>Exploring data that was gathered from participants in experimental speed dating events from 2002-2004
+                    to study gender preferences when searching for love.</p>
                 <a class="btn btn-danger" href="https://github.com/kisha5000/Team12Project3" target="_blank">Github</a>
                 <a class="btn btn-danger" href="http://www.stat.columbia.edu/~gelman/arm/examples/speed.dating/"
-                    target="_blank">Original Data</a>
+                    target="_blank">Data Source</a>
                 <a class="btn btn-danger" href="/about">About</a>
 
             </div>
@@ -95,7 +95,7 @@
                     <div class="card-body">
                         <h2 class="card-title">Visual One</h2>
                         <p><img src="../static/images/img5.png" width="200px"></p>
-                        <p class="card-text">Field of Study by Gender</p>
+                        <p class="card-text">Background of Participants</p>
                     </div>
                     <div class="card-footer">
                         <a href="#visual1" class="btn btn-danger btn-sm">See More</a>
@@ -108,7 +108,7 @@
                     <div class="card-body">
                         <h2 class="card-title">Visual Two</h2>
                         <p><img src="../static/images/img2.png" width="200px"></p>
-                        <p class="card-text">Importance of Attribute As Rated By Your Partner</p>
+                        <p class="card-text">Importance of Attribute As Rated By Gender</p>
                     </div>
                     <div class="card-footer">
                         <a href="#visual2" class="btn btn-danger btn-sm">See More</a>
@@ -121,7 +121,7 @@
                     <div class="card-body">
                         <h2 class="card-title">Visual Three</h2>
                         <p><img src="../static/images/img3.png" width="200px"></p>
-                        <p class="card-text">Male vs. Female Attributes</p>
+                        <p class="card-text">Importance of Demographics As Rated By Gender</p>
                     </div>
                     <div class="card-footer">
                         <a href="#visual3" class="btn btn-danger btn-sm">See More</a>
@@ -135,7 +135,7 @@
                     <div class="card-body">
                         <h2 class="card-title">Visual Four</h2>
                         <p><img src="../static/images/img6.png" width="200px"></p>
-                        <p class="card-text">Attribute Importance</p>
+                        <p class="card-text">Top Ten Attributes of Importance</p>
                     </div>
                     <div class="card-footer">
                         <a href="#visual4" class="btn btn-danger btn-sm">See More</a>
@@ -154,12 +154,20 @@
         <a name="visual1"></a>
         <div class="card text-white bg-secondary my-5 py-4 text-center">
             <div class="card-body">
-                <h2 class="card-title">Field of Study by Gender</h2>
+                <h2 class="card-title">Background of Participants</h2>
             </div>
+        </div>
+
+        <!-- Summary Text -->
+        <div>
+            <p>Enter summary text here.....Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+                numquam, maxime minus
+                quam molestias corporis quod, ea minima accusamus.</p>
         </div>
 
         <!-- Tableau Code -->
         <div class="col-md-8 offset-md-2">
+
             <div class='tableauPlaceholder' id='viz1602810752950' style='position: relative'>
                 <noscript><a href='#'><img alt=' '
                             src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;XF&#47;XF5YWSPQ4&#47;1_rss.png'
@@ -210,6 +218,14 @@
             </div>
         </div>
 
+
+        <!-- Summary Text -->
+        <div>
+            <p>Enter summary text here.....Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+                numquam, maxime minus
+                quam molestias corporis quod, ea minima accusamus.</p>
+        </div>
+
         <!-- Plotly Code -->
         <div>
             <div id="c3db801e-9116-465c-a305-d4e4a99a88a4" class="plotly-graph-div" style="height:100%; width:100%;">
@@ -246,7 +262,7 @@
                                     },
                                     "marker": {
                                         "line": {
-                                            "color": "#E5ECF6",
+                                            "color": "white",
                                             "width": 0.5
                                         }
                                     },
@@ -255,7 +271,7 @@
                                 "barpolar": [{
                                     "marker": {
                                         "line": {
-                                            "color": "#E5ECF6",
+                                            "color": "white",
                                             "width": 0.5
                                         }
                                     },
@@ -264,16 +280,16 @@
                                 "carpet": [{
                                     "aaxis": {
                                         "endlinecolor": "#2a3f5f",
-                                        "gridcolor": "white",
-                                        "linecolor": "white",
-                                        "minorgridcolor": "white",
+                                        "gridcolor": "#E5ECF6",
+                                        "linecolor": "#E5ECF6",
+                                        "minorgridcolor": "#E5ECF6",
                                         "startlinecolor": "#2a3f5f"
                                     },
                                     "baxis": {
                                         "endlinecolor": "#2a3f5f",
-                                        "gridcolor": "white",
-                                        "linecolor": "white",
-                                        "minorgridcolor": "white",
+                                        "gridcolor": "#E5ECF6",
+                                        "linecolor": "#E5ECF6",
+                                        "minorgridcolor": "#E5ECF6",
                                         "startlinecolor": "#2a3f5f"
                                     },
                                     "type": "carpet"
@@ -528,7 +544,7 @@
                                             "color": "#EBF0F8"
                                         },
                                         "line": {
-                                            "color": "white"
+                                            "color": "#E5ECF6"
                                         }
                                     },
                                     "header": {
@@ -536,7 +552,7 @@
                                             "color": "#C8D4E3"
                                         },
                                         "line": {
-                                            "color": "white"
+                                            "color": "#E5ECF6"
                                         }
                                     },
                                     "type": "table"
@@ -593,7 +609,7 @@
                                         [1.0, "#f0f921"]
                                     ]
                                 },
-                                "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3",
+                                "colorway": ["#4E79A7", "#D37295", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3",
                                     "#FF6692", "#B6E880", "#FF97FF", "#FECB52"
                                 ],
                                 "font": {
@@ -602,7 +618,7 @@
                                 "geo": {
                                     "bgcolor": "white",
                                     "lakecolor": "white",
-                                    "landcolor": "#E5ECF6",
+                                    "landcolor": "white",
                                     "showlakes": true,
                                     "showland": true,
                                     "subunitcolor": "white"
@@ -615,47 +631,47 @@
                                     "style": "light"
                                 },
                                 "paper_bgcolor": "white",
-                                "plot_bgcolor": "#E5ECF6",
+                                "plot_bgcolor": "white",
                                 "polar": {
                                     "angularaxis": {
-                                        "gridcolor": "white",
-                                        "linecolor": "white",
+                                        "gridcolor": "#E5ECF6",
+                                        "linecolor": "#E5ECF6",
                                         "ticks": ""
                                     },
-                                    "bgcolor": "#E5ECF6",
+                                    "bgcolor": "white",
                                     "radialaxis": {
-                                        "gridcolor": "white",
-                                        "linecolor": "white",
+                                        "gridcolor": "#E5ECF6",
+                                        "linecolor": "#E5ECF6",
                                         "ticks": ""
                                     }
                                 },
                                 "scene": {
                                     "xaxis": {
-                                        "backgroundcolor": "#E5ECF6",
-                                        "gridcolor": "white",
+                                        "backgroundcolor": "white",
+                                        "gridcolor": "#E5ECF6",
                                         "gridwidth": 2,
-                                        "linecolor": "white",
+                                        "linecolor": "#E5ECF6",
                                         "showbackground": true,
                                         "ticks": "",
-                                        "zerolinecolor": "white"
+                                        "zerolinecolor": "#E5ECF6"
                                     },
                                     "yaxis": {
-                                        "backgroundcolor": "#E5ECF6",
-                                        "gridcolor": "white",
+                                        "backgroundcolor": "white",
+                                        "gridcolor": "#E5ECF6",
                                         "gridwidth": 2,
-                                        "linecolor": "white",
+                                        "linecolor": "#E5ECF6",
                                         "showbackground": true,
                                         "ticks": "",
-                                        "zerolinecolor": "white"
+                                        "zerolinecolor": "#E5ECF6"
                                     },
                                     "zaxis": {
-                                        "backgroundcolor": "#E5ECF6",
-                                        "gridcolor": "white",
+                                        "backgroundcolor": "white",
+                                        "gridcolor": "#E5ECF6",
                                         "gridwidth": 2,
-                                        "linecolor": "white",
+                                        "linecolor": "#E5ECF6",
                                         "showbackground": true,
                                         "ticks": "",
-                                        "zerolinecolor": "white"
+                                        "zerolinecolor": "#E5ECF6"
                                     }
                                 },
                                 "shapedefaults": {
@@ -665,19 +681,19 @@
                                 },
                                 "ternary": {
                                     "aaxis": {
-                                        "gridcolor": "white",
-                                        "linecolor": "white",
+                                        "gridcolor": "#E5ECF6",
+                                        "linecolor": "#E5ECF6",
                                         "ticks": ""
                                     },
                                     "baxis": {
-                                        "gridcolor": "white",
-                                        "linecolor": "white",
+                                        "gridcolor": "#E5ECF6",
+                                        "linecolor": "#E5ECF6",
                                         "ticks": ""
                                     },
-                                    "bgcolor": "#E5ECF6",
+                                    "bgcolor": "white",
                                     "caxis": {
-                                        "gridcolor": "white",
-                                        "linecolor": "white",
+                                        "gridcolor": "#E5ECF6",
+                                        "linecolor": "#E5ECF6",
                                         "ticks": ""
                                     }
                                 },
@@ -686,31 +702,32 @@
                                 },
                                 "xaxis": {
                                     "automargin": true,
-                                    "gridcolor": "white",
-                                    "linecolor": "white",
+                                    "gridcolor": "#E5ECF6",
+                                    "linecolor": "#E5ECF6",
                                     "ticks": "",
                                     "title": {
                                         "standoff": 15
                                     },
-                                    "zerolinecolor": "white",
+                                    "zerolinecolor": "#E5ECF6",
                                     "zerolinewidth": 2
                                 },
                                 "yaxis": {
                                     "automargin": true,
-                                    "gridcolor": "white",
-                                    "linecolor": "white",
+                                    "gridcolor": "#E5ECF6",
+                                    "linecolor": "#E5ECF6",
                                     "ticks": "",
                                     "title": {
                                         "standoff": 15
                                     },
-                                    "zerolinecolor": "white",
+                                    "zerolinecolor": "#E5ECF6",
                                     "zerolinewidth": 2
                                 }
                             }
-                        },
-                        "title": {
-                            "text": "Importance of Attribute As Rated By Your Partner"
                         }
+                        // ,
+                        // "title": {
+                        //     "text": "Importance of Attribute As Rated By Your Partner"
+                        // }
                     }, {
                         "responsive": true
                     })
@@ -729,8 +746,13 @@
         <a name="visual3"></a>
         <div class="card text-white bg-secondary my-5 py-4 text-center">
             <div class="card-body">
-                <h2 class="card-title">Male vs. Female Attributes</h2>
+                <h2 class="card-title">Importance of Demographics As Rated By Gender</h2>
             </div>
+        </div>
+
+        <!-- Summary Text -->
+        <div>
+            <p>Looking at the demographics of subjects and partners, we see that women put greater weight on the race, income, and age of the partner they choose, while men don't show half of the concern that women do. Historically this aligns with societal beliefs of attributes a man should have when a woman chooses her mate.</p>
         </div>
 
         <!-- chart2.js -->
@@ -754,9 +776,15 @@
         <a name="visual4"></a>
         <div class="card text-white bg-secondary my-5 py-4 text-center">
             <div class="card-body">
-                <h2 class="card-title">Attribute Importance</h2>
+                <h2 class="card-title">Top Ten Attributes of Importance</h2>
             </div>
         </div>
+
+        <!-- Summary Text -->
+        <div>
+            <p>Using the Learning from our Random Forest Model and Tuning, of both men and women combined, the most important feature was based on the subject's decision on the partner holding the most weight. By removing the outlier, we see that whether the subject and partner have shared interests, were fun to be around, and are sincere, and the order of the partners during the speed dating rounds held the most importance.</p>
+        </div>
+
         <!-- polar.js -->
         <div>
             <canvas id="myPolar" width="300" height="100"></canvas>
@@ -782,7 +810,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">2020 Rice Data Science Bootcamp | Team 12 | Project 3</p>
+            <p class="m-0 text-center text-white">2020 Rice Data Science Bootcamp | Team 12 | Final Project</p>
         </div>
         <!-- /.container -->
     </footer>
