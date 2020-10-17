@@ -53,7 +53,8 @@ function chartJS3() {
         legend: {
           position: "right",
         },
-      });
+      },
+    });
   });
 }
 chartJS3();
