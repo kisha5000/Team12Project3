@@ -9,8 +9,8 @@ function chartJS2() {
       let itemFemale = female_importance;
 
       //console.log(female_importance);
-      item = window.getDistinct(item);
-      itemFemale = window.getDistinct(itemFemale);
+      // item = window.getDistinct(item);
+      // itemFemale = window.getDistinct(itemFemale);
       item = getCertainFeatures(item, [
         "income",
         "age_subject",
